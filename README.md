@@ -89,7 +89,7 @@ Wanna play with it yourself? Here's how to get RAG Scraper purring on your machi
     **`.env.example`**
     ```ini
     # Get your FREE key from [https://aistudio.google.com/app/apikey](https://aistudio.google.com/app/apikey)
-    GOOGLE_API_KEY="your_google_ai_studio_api_key"
+    GEMINI_API_KEY="your_gemini_ai_studio_api_key"
 
     # Grab these from your Qdrant Cloud dashboard: [https://cloud.qdrant.io/](https://cloud.qdrant.io/)
     QDRANT_URL="your_qdrant_cloud_cluster_url"
@@ -98,7 +98,7 @@ Wanna play with it yourself? Here's how to get RAG Scraper purring on your machi
 
 5.  **Fire It Up!**
     ```bash
-    uvicorn main:app --reload
+    uvicorn src.main:app --reload
     ```
 
 6.  **Browse and Chat!**
@@ -112,7 +112,7 @@ RAG Scraper is designed to be a breeze to deploy on platforms like **Render** as
 
 1.  **New Web Service:** Create one on Render, linking it to your GitHub repo.
 2.  **Build Command:** `pip install -r requirements.txt`
-3.  **Start Command:** `uvicorn main:app --host 0.0.0.0 --port $PORT`
+3.  **Start Command:** `Start Command: uvicorn src.main:app --host 0.0.0.0 --port 8000`
 4.  **Environmental Secrets:** Add your `GOOGLE_API_KEY`, `QDRANT_URL`, and `QDRANT_API_KEY` as secret environment variables in Render's dashboard.
 
 > **⚠️ A Little Heads-Up on Persistence:** Our current setup uses a `.last_ingested_source.txt` file to keep track of the active URL. On cloud platforms like Render, files on the server can disappear when the service restarts or gets updated. This means your chatbot might "forget" the last ingested URL sometimes. For a more robust, always-on solution, you'd want to store this context in a persistent external cache (like Redis) or a tiny database! Just something to keep in mind for future scaling! 😉

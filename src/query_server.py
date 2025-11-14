@@ -40,6 +40,7 @@ VECTOR_BACKEND = "qdrant"
 from fastapi import FastAPI, HTTPException, BackgroundTasks
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
+from starlette.responses import FileResponse
 import traceback
 import time
 import random
@@ -56,11 +57,28 @@ app = FastAPI()
 # -----------------------
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=ALLOWED_ORIGINS or ["*"],
+    allow_origins=ALLOWED_Origins or ["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# --- Serve the Frontend ---
+# This is the path to your 'web' folder
+STATIC_DIR = os.path.join(PROJECT_ROOT, "web")
+
+@app.get("/")
+async def serve_index():
+    return FileResponse(os.path.join(STATIC_DIR, "index.html"))
+
+@app.get("/style.css")
+async def serve_css():
+    return FileResponse(os.path.join(STATIC_DIR, "style.css"))
+
+@app.get("/index.js")
+async def serve_js():
+    return FileResponse(os.path.join(STATIC_DIR, "index.js"))
+# --- End of Frontend ---
 
 # Path to file storing the last ingested source URL
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))

@@ -1,5 +1,5 @@
 // web/index.js
-const API_BASE = 'http://127.0.0.1:8000';
+const API_BASE = '';
 
 const urlInput = document.getElementById('urlInput');
 const startIngestBtn = document.getElementById('startIngest');

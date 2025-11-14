@@ -63,6 +63,9 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# --- Define Project Root FIRST ---
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+
 # --- Serve the Frontend ---
 # This is the path to your 'web' folder
 STATIC_DIR = os.path.join(PROJECT_ROOT, "web")
@@ -81,7 +84,6 @@ async def serve_js():
 # --- End of Frontend ---
 
 # Path to file storing the last ingested source URL
-PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 LAST_SOURCE_PATH = os.path.join(PROJECT_ROOT, ".last_ingested_source.txt")
 
 # Pydantic model for query payload

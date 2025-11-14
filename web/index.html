@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>RAG Chat — Local UI</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <h1>RAG Chat — Local</h1>
+
+    <label>1) Paste a URL to ingest</label>
+    <div class="row">
+      <input id="urlInput" placeholder="https://en.wikipedia.org/wiki/Artificial_intelligence" />
+      <button id="startIngest">Start Ingest</button>
+    </div>
+    <div class="row" style="margin-top:6px">
+      <button id="checkStatus">Check Ingest Status</button>
+      <div id="ingestStatus" class="small" style="min-width:200px">No ingest started</div>
+    </div>
+    <div class="hint">Click <strong>Start Ingest</strong> to ask the backend to fetch & index the URL (runs in background). Then use <strong>Check Ingest Status</strong> to detect when content is available.</div>
+
+    <hr style="margin:16px 0;border:none;border-top:1px solid #112233" />
+
+    <label>2) Ask questions (after ingest completes)</label>
+    <textarea id="question" rows="4" placeholder="Ask something about the ingested page..."></textarea>
+
+    <div class="row" style="margin-top:10px">
+      <select id="k">
+        <option value="4">k = 4</option>
+        <option value="6">k = 6</option>
+        <option value="10">k = 10</option>
+      </select>
+      <button id="ask">Ask</button>
+      <button id="debug">Debug (show retrieved)</button>
+    </div>
+
+    <!-- NEW: answer container is a div that expands; pre-wrap preserves newlines -->
+    <div id="answer" class="answer" role="region" aria-live="polite">Answer will appear here.</div>
+
+    <div class="hint">If you see <em>"I don't know from the provided context."</em> use <strong>Debug</strong> to inspect retrieved chunks or increase k.</div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>

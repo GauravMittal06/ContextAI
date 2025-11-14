@@ -1,0 +1,56 @@
+:root{
+  --bg:#071026;
+  --card:#0b1220;
+  --muted:#9fb0d9;
+  --accent:#4f46e5;
+  --text:#e6eef8;
+}
+body{
+  font-family:Inter,Segoe UI,Roboto,Helvetica,Arial;
+  background:var(--bg);
+  color:var(--text);
+  margin:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  height:100vh;
+}
+.app{
+  width:880px;
+  background:var(--card);
+  padding:26px;
+  border-radius:12px;
+  box-shadow:0 12px 30px rgba(2,6,23,.7);
+}
+h1{margin:0 0 8px 0;font-size:20px}
+label{display:block;color:var(--muted);font-size:13px;margin-top:12px}
+.row{display:flex;gap:8px;margin-top:8px}
+input,textarea,select{
+  flex:1;padding:10px;border-radius:8px;border:1px solid #1b2738;background:#071226;color:var(--text);outline:none;
+}
+button{padding:10px 12px;border-radius:8px;border:0;background:var(--accent);color:white;cursor:pointer}
+.small{font-size:13px;color:var(--muted)}
+.hint{color:var(--muted);font-size:13px;margin-top:6px}
+
+/* ANSWER BOX: auto-size, preserve paragraphs, wrap long lines */
+.answer{
+  margin-top:12px;
+  background: #041123;
+  padding: 14px;
+  border-radius: 8px;
+  box-sizing: border-box;
+  white-space: pre-wrap;    /* preserve newlines, but wrap long lines */
+  word-break: break-word;   /* break long words/URLs */
+  line-height: 1.45;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color: var(--text);
+  font-size: 14px;
+  /* Let it grow naturally, but cap so it doesn't overflow whole viewport */
+  max-height: 60vh;
+  overflow: auto; /* only show scrollbar if content exceeds max-height */
+}
+
+/* Optional: nicer scrollbar when it appears */
+.answer::-webkit-scrollbar{height:10px;width:10px}
+.answer::-webkit-scrollbar-thumb{background:#183048;border-radius:8px}
+.answer::-webkit-scrollbar-track{background:transparent}

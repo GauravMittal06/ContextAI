@@ -73,14 +73,6 @@ STATIC_DIR = os.path.join(PROJECT_ROOT, "web")
 @app.get("/")
 async def serve_index():
     return FileResponse(os.path.join(STATIC_DIR, "index.html"))
-
-@app.get("/style.css")
-async def serve_css():
-    return FileResponse(os.path.join(STATIC_DIR, "style.css"))
-
-@app.get("/index.js")
-async def serve_js():
-    return FileResponse(os.path.join(STATIC_DIR, "index.js"))
 # --- End of Frontend ---
 
 # Path to file storing the last ingested source URL

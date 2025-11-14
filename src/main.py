@@ -5,7 +5,8 @@ Shows original import traceback to help debugging.
 """
 
 try:
-    # package-relative (works for `uvicorn src.main:app`)
+    # package-relative (works for 
+    # 1`uvicorn src.main:app`)
     from .query_server import app  # type: ignore
 except Exception as e:
     import traceback, sys

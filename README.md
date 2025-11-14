@@ -6,6 +6,16 @@ We've packed this whole experience into one neat little package: a FastAPI backe
 
 ---
 
+## 🚀 Live Demo
+
+You can try the live application right here in your browser!
+
+**[► Click here to launch the live RAG Scraper](https://rag-scraper.onrender.com)**
+
+*(Note: The app runs on a free service, so it may take 30-60 seconds to "wake up" if it's been idle.)*
+
+---
+
 ## ✨ Super-Duper Features!
 
 * **⚡ Blazing Fast 2-Stage UI:** Go from pasting a URL to chatting in a flash, all on one seamless page! No annoying reloads, just pure flow.

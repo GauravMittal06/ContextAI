@@ -1,14 +1,14 @@
-# 🚀 RAG Scraper – Contextual AI Chat for Webpages & Documents 🤖
+# 🚀 ContextAI – Context-Aware Chat for Webpages & Documents 🤖
 
 Ever wished you had a super-smart assistant that could **read a webpage or document and answer questions about it instantly**?
 
-**RAG Scraper** is a Retrieval-Augmented Generation (RAG) system that lets you:
+**ContextAI** is a Retrieval-Augmented Generation (RAG) system that lets you:
 
 - Ingest **webpages or uploaded files**
 - Convert their contents into **vector embeddings**
 - Ask questions through a **context-aware chatbot**
 
-Unlike traditional AI chatbots, RAG Scraper **only answers using the information you provide**, ensuring responses remain **grounded in the source material**.
+Unlike traditional AI chatbots, ContextAI **only answers using the information you provide**, ensuring responses remain **grounded in the source material**.
 
 ---
 
@@ -193,7 +193,7 @@ From here you can:
 
 # 🔍 Example Use Cases
 
-RAG Scraper can be used for:
+ContextAI can be used for:
 
 - Research assistants
 - Legal document exploration

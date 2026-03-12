@@ -114,8 +114,8 @@ The model is instructed to answer **strictly from the retrieved context**.
 ## 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/rag-scraper.git
-cd rag-scraper
+git clone https://github.com/yourusername/ContextAI.git
+cd ContextAI
 ```
 
 ---
